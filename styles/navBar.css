@@ -1,0 +1,183 @@
+::selection {
+    background-color: #2a3647;
+    color: white; 
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background-color: #f6f7f8;
+}
+
+/* hier beginnt css für die navbar */
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 232px;
+    height: 100vh;
+    background-color: #2a3647;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.menuLogo {
+    display: flex;
+    justify-content: center;
+    height: 122px;
+    padding-top: 64px;
+}
+
+.menuButtonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.menuButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 120px;
+    padding: 8px 56px;
+    cursor: pointer;
+}
+
+.menuButton p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: #cdcdcd;
+}
+
+.menuButton:hover {
+    background-color: #2a3d59;
+}
+
+.selectedMenuButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 120px;
+    padding: 8px 56px;
+    cursor: pointer;
+    background-color: #091931;
+}
+
+.selectedMenuButton p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: #cdcdcd;
+}
+
+.menuFooter {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 4px;
+    height: 317px;
+    padding-bottom: 64px;
+}
+
+.menuFooter p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.menuFooterButton {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: #a8a8a8;
+    text-decoration: none;
+    padding: 8px;
+    padding-left: 52px;
+    cursor: pointer;
+}
+
+.menuFooterButton:hover {
+    color: #29abe2;
+    font-weight: 700;
+}
+
+.selectedFooterButton {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: #a8a8a8;
+    text-decoration: none;
+    padding: 8px;
+    padding-left: 52px;
+    background-color: #091931;
+}
+
+@media screen and (max-width: 1100px) {
+
+    .menu {
+        height: 80px;
+        width: 100%;
+        margin-top: 0;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        flex-direction: row;
+        position: fixed;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menuFooter {
+        display: none;
+    }
+
+    .menuLogo {
+        display: none;
+    }
+
+    .menuButtonContainer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .menuButton {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        width: auto;
+        padding: 0;
+    }
+
+    .selectedMenuButton {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        width: auto;
+        padding: 10px;
+        border-radius: 20px;
+    }
+}
+
+
+@media screen and (max-width: 340px) {
+    .menuButton p {
+        font-size: 14px;
+    }
+    .selectedMenuButton p {
+        font-size: 14px;
+    }
+ }

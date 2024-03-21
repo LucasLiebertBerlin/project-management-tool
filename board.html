@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Board</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/board.css" />
+    <link rel="stylesheet" href="/styles/storage.css">
+    <link rel="stylesheet" href="../styles/summary.css" />
+
+    <script src="./js/storageToken.js" defer></script>
+    <script src="./js/storage.js" defer></script>
+    <script src="./js/register/initRegister.js" defer></script>
+    <script src="./js/register/registration.js" defer></script>
+    <script src="./js/register/designRegister.js" defer></script>
+    <script src="./js/index.js" defer></script>
+    <script src="./js/navBar.js" defer></script>
+    <script src="./js/templates/board-html.js" defer></script>
+    <script src="./js/summary.js" defer></script>
+    <script src="./js/templates/addTask-html.js" defer></script>
+    <script src ="../js/addTask/addTaskArrays.js" defer></script>
+    <script src ="../js/addTask/addTaskForm.js" defer></script>
+    <script src ="../js/addTask/subtask.js" defer></script>
+    <script src="./js/board/initBoard.js" defer></script>
+    <script src="./js/board/searchBoard.js" defer></script>
+    <script src="./js/board/dragAndDropBoard.js" defer></script>
+    <script src="./js/board/openOverlays.js" defer></script>
+    <script src="./js/board/openEditTask.js" defer></script>
+    <script src="./js/board/editTaskFunctionality.js" defer></script>
+    <script src="./js/header.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="/img/join_logo.png">
+
+</head>
+<body class="boardBody" onload="initBoard()">
+    <div w3-include-html="/templates/navBar.html"></div>
+    <div w3-include-html="/templates/header.html"></div>
+    <div onclick="closeTask()" class="boardTaskOverlay d-none" id="boardTaskOverlayAddTask">
+        <div class="dFlex alignCenter justCenter">
+            <form w3-include-html="/templates/addTaskTemplate.html" onsubmit="createTask(), event.preventDefault()" onclick="event.stopPropagation(), closeCategoryField()" id="addTaskOverlay" class="addTaskOverlay animationRightSlideIn posRelative"></form>
+        </div>
+    </div>
+    <div class="savingError d-none"><div class="savingError1">Sorry for saving error! <button onclick="closeSavingError()" class="savingErrorButton">OK</button></div></div>
+    <div class="loadingError d-none"><div class="loadingError1">Sorry for loading error! <button onclick="closeLoadingError()" class="loadingErrorButton">OK</button></div></div>
+    <div class="error-container d-none">
+        <h1>Oops!</h1>
+        <p>An error occurred because you are not logged in.</p>
+        <p>Please log in and try again.</p>
+        <div class="login-button-div"><a href="index.html" class="login-button">Login</a></div>
+    </div>
+    <div class="posAbsolute width100Perc height100Vh dFlex justCenter alignCenter bottomSlideInAndOut d-none zIndex101" id="successBannerBoard">
+        <div class="darkBtnWithoutHover dFlex alignCenter justCenter gap20">Task added to board <img src="../img/board_icon.png" alt=""></div>
+    </div>
+    <div id="informationOverlayEditingTask" class="posAbsolute zIndex101 width100Perc height100Vh dFlex justCenter alignCenter d-none bottomSlideInAndOut">
+        <div class="darkBtnWithoutHover">Your editing was successful!</div>
+    </div>
+    <div class="main-board-container">
+        <div onclick="closeTask()" id="boardTaskOverlay"></div>
+        <div class="menubar">
+            <div class="headline-board">
+                <div>Board</div>
+                <div class="addTaskPlus" onclick="openAddTask('toDo')"><img src="img/plus add task mobile.png" alt=""></div>
+            </div>
+            <div class="searchAdd">
+                <div class="fakeInput"> 
+                    <input class="inputSearch" id="boardSearchInput" onkeyup="searchAllTasks()" type="text" placeholder="Find Task">
+                    <div class="inputRight">
+                        <img src="/img/search-line.png" alt="">
+                        <div class="searchIcon">
+                            <img src="/img/search-symbol.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <button onclick="openAddTask('toDo')" class="darkBtn cursorPointer">Add Task <img src="img/add.png"></button>                
+            </div>
+        </div>
+        <div class="progressBar">
+            <div class="lineUp dFlex directionColumn">
+                <div class="progressHead">
+                    <div class="headlineBoardTasks">To do</div> 
+                    <div onclick="openAddTask('toDo')" class="plus">+</div>
+                </div>
+                <div ondragover="allowDrop(event), showEmptyDiv('divToDo')" ondragleave="removeEmptyDiv('divToDo')" ondrop="moveTo('toDo')" id="divToDo" class="lineUpHeight column flex1 dropbox"></div>
+            </div>
+            <div class="lineUp dFlex directionColumn">
+                <div class="progressHead">
+                    <div class="headlineBoardTasks">In  progress</div>
+                    <div onclick="openAddTask('inProgress')" class="plus">+</div>
+                </div>
+                <div ondragover="allowDrop(event), showEmptyDiv('divInProgress')" ondragleave="removeEmptyDiv('divInProgress')" ondrop="moveTo('inProgress')" id="divInProgress" class="lineUpHeight column flex1 dropbox"></div>
+            </div>
+            <div class="lineUp dFlex directionColumn">
+                <div class="progressHead">
+                    <div class="headlineBoardTasks">Await feedback</div>
+                    <div onclick="openAddTask('awaitFeedback')" class="plus">+</div>
+                </div>
+                <div ondragover="allowDrop(event), showEmptyDiv('divAwaitFeedback')" ondragleave="removeEmptyDiv('divAwaitFeedback')" ondrop="moveTo('awaitFeedback')" id="divAwaitFeedback" class="lineUpHeight column flex1 dropbox"></div>
+            </div>
+            <div class="lineUp dFlex directionColumn">
+                <div class="progressDone">
+                    <div class="headlineBoardTasks">Done</div>
+                </div>
+                <div ondragover="allowDrop(event), showEmptyDiv('divDone')" ondragleave="removeEmptyDiv('divDone')" ondrop="moveTo('done')" id="divDone" class="lineUpHeight column flex1 dropbox"></div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

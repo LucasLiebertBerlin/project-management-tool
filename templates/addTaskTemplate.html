@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AddTask</title>
+    <link rel="stylesheet" href="../styles/addTask.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <script src="./js/storageToken.js" defer></script>
+    <script src="./js/storage.js" defer></script>
+    <script src="./js/register/initRegister.js" defer></script>
+    <script src="./js/register/registration.js" defer></script>
+    <script src="./js/register/designRegister.js" defer></script>
+    <script src="./js/index.js" defer></script>
+    <script src="/js/navBar.js" defer></script>
+    <script src ="../js/addTask/addTaskArrays.js" defer></script>
+    <script src ="../js/addTask/addTaskForm.js" defer></script>
+    <script src ="../js/addTask/subtask.js" defer></script>
+    <script src="js/header.js" defer></script>
+</head>
+<body onload="init(), includeHTML()">
+    <div w3-include-html="/templates/navBar.html"></div>
+    <div w3-include-html="/templates/header.html"></div>
+    <div id="main-add-task-container" class="main-add-task-container">
+        <div id="addTaskTemplateH1" class="addTask">Add Task</div>
+        <div id="addTaskTemplateTaskWrapper" class="taskWrapper">
+        <div class="taskFrame ">
+            <div class="taskTitle">
+                <div><p>Title<span class="red">*</span></p></div>
+                <input id="title" type="text" placeholder="Enter a Title" required>
+            </div>
+            <div class="description">
+                <div><p>Description</p></div>
+                <textarea id="description" rows="2" cols="25" placeholder="Enter a Description"></textarea>
+            </div>
+            <div class="assign">
+                <p>Assigned to</p>
+                <div class="contactInput" onclick="event.stopPropagation()"><input class="assignContact" placeholder="Select contacts to assign"><img id="arrow" src="./img/arrow_drop_down.png"></div>
+                <div id="contactsDropdown" class="contacts-dropdown">
+                    <!-- Contacts will be dynamically inserted here -->
+                </div>
+            </div>
+            <div id="selectedContactsContainer" class="selected-contacts-container">
+                <!-- Selected contacts' initials will be displayed here -->
+            </div>
+            
+        </div>
+        <div class="parting-line addTaskTemplateTaskMar25"></div>
+        <div class="taskFrame2 addTaskTemplateTaskMar25">
+            <!-- Due Date -->
+            <div class="deadline">
+              <p>Due Date<span class="red">*</span></p>
+              <input class="custom-date-input" required id="due" placeholder="dd/mm/yyyy" class="inputBoardEdit width100PercMinus26Px focusBlueBorder addTaskOverlayDateInput" type="date">
+            </div>
+          
+            <!-- Priority -->
+            <div id="priority" class="priority">
+              <p>Prio</p>
+              <div class="prio">
+                <div><button class="urgent-inactive" type="button" onclick="activateButton('urgent')" id="urgent">urgent <img src="../img/prio alta.png"></button></div>
+                <div><button type="button" onclick="activateButton('medium')" id="medium">medium <img src="../img/mediumPrio.png"></button></div>
+                <div><button type="button" onclick="activateButton('low')" id="low">low <img src="../img/Capa 1.png"></button></div>
+              </div>
+            </div>
+          
+            <!-- Category -->
+            <div class="category">
+                <p>Category<span class="red">*</span></p>
+                <div class="dropdown">
+                    <div class="categoryInput"> <input id="category" class="category-input" onclick="event.stopPropagation(), toggleCategoryDropdown()" readonly placeholder="Select a Category"><img id="arrow2" src="./img/arrow_drop_down.png"></div>
+                    <div onclick="event.stopPropagation()" id="categoryDropdown" class="category-dropdown"></div>
+                </div>
+            </div>
+            <div class="dFlex directionColumn width100Perc addTaskSubtasksOverDiv">
+                <div class="padBot5 fontSize20">Subtasks</div>
+                <div class="posRelative cursorPointer" id="addTaskInputSubtasksParent">
+                    <input placeholder="Add new subtask" id="addTaskInputSubtasks" onkeydown="addTaskaddSubtaskOnEnter(event)" class="addTaskSubtasksInput inputBoardEdit width100Perc focusBlueBorder" type="text">
+                    <div id="addTaskInputSubtasksImg" class="posAbsolute dFlex justCenter alignCenter height48 width48 rightMinus26 top0 right0">
+                        <img onclick="addTaskfocusOnInputOrAddSubtask('${task.createdAt}')" class="height16" src="./img/add-2.png" alt="plus">
+                    </div>
+                </div>
+                <div class="dFlex directionColumn gap5 padTop5 overflowY maxHeight90" id="addTaskAllSubtasks"></div>
+            </div>
+
+            </div>
+          </div>
+        <div class="required-create addTaskTemplateRequiredCreate">
+            <div class="required">
+                <span class="red">*</span>
+                <div>This field is required</div>
+            </div>  
+            <div class="create">
+                <button type="reset" class="clear" onclick="clearInput()">Clear <img class="crossAddTask" src="../img/iconoir_cancel.png"></button>
+                <button type="submit" class="createTask">Create Task <img src="../img/check.png"></button>
+            </div>
+        </div>
+    </div>
+</body>

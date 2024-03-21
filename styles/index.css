@@ -1,0 +1,629 @@
+::selection {
+    background-color: #2a3647;
+    color: white; 
+}
+
+body {
+    background-color: #F6F7F8;
+}
+
+h1 {
+    font-size: 64px;
+    margin: 16px;
+    margin-top: 0;
+}
+
+/* ---------- HEIGHT AND WIDTH ---------- */
+
+.height10 {
+    height: 10px;
+}
+
+.height13 {
+    height: 13px;
+}
+
+.height14 {
+    height: 14px;
+}
+
+.height15 {
+    height: 15px;
+}
+
+.height17 {
+    height: 17px;
+}
+
+.height18 {
+    height: 18px;
+}
+
+.height20 {
+    height: 20px;
+}
+
+.height33 {
+    height: 33px;
+}
+
+.height48 {
+    height: 48px;
+}
+
+.height100Vh {
+    height: 100vh;
+}
+
+.width12 {
+    width: 12px;
+}
+
+.width14 {
+    width: 14px;
+}
+
+.width33 {
+    width: 33px;
+}
+
+.width48 {
+    width: 48px;
+}
+
+.width50 {
+    width: 50px;
+}
+
+.width250 {
+    width: 250px;
+}
+
+.width100Perc {
+    width: 100%;
+}
+
+.width100PercMinus26Px {
+    width: calc(100% - 26px);
+}
+
+.width100PercMinus16Px {
+    width: calc(100% -16px);
+}
+
+/* ---------- PADDING AND MARGIN ---------- */
+
+.padTop3 {
+    padding-top: 3px;
+}
+
+.padTop5 {
+    padding-top: 5px;
+}
+
+.padTop10 {
+    padding-top: 10px;
+}
+
+.padTop20 {
+    padding-top: 20px;
+}
+
+.padTop35 {
+    padding-top: 35px;
+}
+
+.padTop60 {
+    padding-top: 60px;
+}
+
+.padRight10 {
+    padding-right: 10px;
+}
+
+.padRight18 {
+    padding-right: 18px;
+}
+
+.padRight30 {
+    padding-right: 30px;
+}
+
+.padRight60 {
+    padding-right: 60px;
+}
+
+.padLeft2 {
+    padding-left: 2px;
+}
+
+.padLeft6 {
+    padding-left: 6px;
+}
+
+.padLeft8 {
+    padding-left: 8px;
+}
+
+.padLeft16 {
+    padding-left: 16px;
+}
+
+.padBot5 {
+    padding-bottom: 5px;
+}
+
+.padBot10 {
+    padding-bottom: 10px;
+}
+
+.marBot20 {
+    margin-bottom: 20px;
+}
+
+.marTopMinus10 {
+    margin-top: -10px;
+}
+
+.marTop10 {
+    margin-top: 10px;
+}
+
+.marLeft3 {
+    margin-left: 3px;
+}
+
+.marLeft6 {
+    margin-left: 6px;
+}
+
+.marLeft10 {
+    margin-left: 10px !important;
+}
+
+.marLeft15 {
+    margin-left: 15px;
+}
+
+.marLeft23 {
+    margin-left: 23px;
+}
+
+.marLeft30{
+    margin-left: 30px;
+}
+
+.marRight10 {
+    margin-right: 10px !important;
+}
+
+.marRight28 {
+    margin-right: 28px;
+}
+
+.marBot2 {
+    margin-bottom: 2px;
+}
+
+.gap1 {
+    gap: 1px;
+}
+
+.gap5 {
+    gap: 5px;
+}
+
+.gap6 {
+    gap: 6px;
+}
+
+.gap10 {
+    gap: 10px;
+}
+
+.gap20 {
+    gap: 20px;
+}
+
+/* ---------- FONTS ---------- */
+
+.registerSignUpSuccessfully span {
+    padding: 18px 20px 18px 20px !important;
+    border-radius: 12px !important;
+}
+
+.registerSignUpSuccessfully {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.fontSize11 {
+    font-size: 11px;
+}
+
+.fontSize12 {
+    font-size: 12px;
+}
+
+.fontSize14 {
+    font-size: 14px;
+}
+
+.fontSize16 {
+    font-size: 16px;
+}
+
+.fontSize20 {
+    font-size: 20px;
+}
+
+.hoverBlueUnderline:hover {
+    text-decoration: underline;
+    text-decoration-color: #29ABE2;
+}
+
+/* ---------- OTHERS ---------- */
+
+.informNotTheSamePassword {
+    position: absolute;
+}
+
+.redBorder {
+    border-color: red !important;
+}
+
+.registerCheckbox {
+    height: 20px;
+}
+
+.parentRegisterArrowBack {
+    position: absolute;
+    left: 50px;
+    top: 60px;
+    height: 20px;
+    padding: 6px;
+    transition: all 125ms ease-in-out;
+}
+
+.parentRegisterArrowBack:hover {
+    padding: 5px;
+    background-color: #f4f4f4;
+    border-radius: 100%;
+}
+
+.registerArrowBack {
+    height: 18px;
+    transition: all 125ms ease-in-out;
+}
+
+.registerArrowBack:hover {
+    height: 20px;
+}
+
+.overDivGuestLogInBtn {
+    width: 134px;
+    height: 46px;
+}
+
+.registerJoinLogo {
+    width: 100px;
+    left: 60px;
+    top: 60px;
+}
+
+.overDivFormLogIn {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: -1;
+}
+
+.formLogIn {
+    box-shadow: 0px 0px 14px 3px #0000000A;
+    background-color: white;
+    padding: 40px 80px;
+    border-radius: 25px;
+}
+
+.blueLine {
+    width: 150px;
+    height: 2px;
+    background-color: #29ABE2;
+    margin-bottom: 20px;
+}
+
+.bot60LeftCenter {
+    bottom: 60px;
+    left: calc(50vw - 110px);
+}
+
+.logInInputBorder {
+    border-radius: 9px;
+    border: 1px solid #D1D1D1;
+    padding: 8px 15px;
+    outline: none;
+    padding-right: 40px;
+    width: 305px;
+}
+
+.logInInputBorder:focus {
+    border: 1px solid #29ABE2;
+}
+
+.logInInputBorder::placeholder {
+    color: #CDCDCD;
+}
+
+.pointerEventsNone {
+    pointer-events: none;
+}
+
+.top0 {
+    top: 0;
+}
+
+.top5 {
+    top: 5px;
+}
+
+.top7 {
+    top: 7px;
+}
+
+.top9 {
+    top: 9px;
+}
+
+.top11 {
+    top: 11px;
+}
+
+.top15 {
+    top: 15px;
+}
+
+.top45 {
+    top: 45px;
+}
+
+.rightMinus26 {
+    right: -26px;
+}
+
+.right0 {
+    right: 0;
+}
+
+.right7 {
+    right: 7px;
+}
+
+.right11 {
+    right: 11px;
+}
+
+.right15 {
+    right: 15px;
+}
+
+.right47 {
+    right: 47px;
+}
+
+.bot0 {
+    bottom: 0;
+}
+
+.bottomMinus18 {
+    bottom: -18px;
+}
+
+/* ---------- ANIMATIONS ---------- */
+
+.bottomSlideInAndOut {
+    animation-name: bottomSlideInAnOut;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.opacity0to1 {
+    animation-name: opacity0to1;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+.logoSlideIn {
+    animation-name: logoSlideInDesktop;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bottomSlideInAnOut {
+    0% {
+        transform: translateY(75vh);
+    }
+    33%, 67% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(75vh);
+    }
+}
+
+@keyframes opacity0to1 {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes logoSlideInDesktop {
+    0% {
+        width: 274px;
+        left: calc(50vw - 137px);
+        top: calc(50vh - 167px);
+    }
+    25% {
+        width: 274px;
+        left: calc(50vw - 137px);
+        top: calc(50vh - 167px);
+    }
+    100% {
+        width: 100px;
+        left: 60px;
+        top: 60px;
+    }
+}
+
+@keyframes logoSlideInMobile450 {
+    0% {
+        width: 274px;
+        left: calc(50vw - 137px);
+        top: calc(50vh - 167px);
+    }
+    25% {
+        width: 274px;
+        left: calc(50vw - 137px);
+        top: calc(50vh - 167px);
+    }
+    100% {
+        width: 50px;
+        left: 30px;
+        top: 30px;
+    }
+}
+
+@keyframes logoSlideInMobile360 {
+    0% {
+        width: 274px;
+        left: calc(50vw - 137px);
+        top: calc(50vh - 167px);
+    }
+    25% {
+        width: 274px;
+        left: calc(50vw - 137px);
+        top: calc(50vh - 167px);
+    }
+    100% {
+        width: 50px;
+        left: 20px;
+        top: 20px;
+    }
+}
+
+/* ---------- MEDIA QUERY ---------- */
+
+@media (max-width: 860px) {
+    .registerJoinLogo {
+        width: 80px;
+        left: 30px;
+        top: 30px;
+    }
+}
+
+@media (max-width: 740px) { 
+    @media (max-height: 740px) {
+        .registerJoinLogo {
+            width: 38px;
+            left: 30px;
+            top: 30px;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .formLogIn {
+        padding: 40px;
+    }
+
+    .logInInputBorder {
+        width: 200px;
+    }
+
+    .registerH1 {
+        font-size: 40px;
+        margin: 8px;
+    }
+}
+
+@media (max-width: 450px) {
+    .logoSlideIn {
+        animation-name: logoSlideInMobile450 !important;
+    }
+
+    .sectionSignUpMobile {
+        padding: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: calc(100vh - 150px);
+    }
+
+    @media(max-height: 750px) {
+        .sectionSignUpMobile {
+            margin-top: calc(100vh - 100px);
+        }
+        .bot60LeftCenter {
+            bottom: 15px;
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .logoSlideIn {
+        animation-name: logoSlideInMobile360 !important;
+    }
+
+    .parentRegisterArrowBack {
+        left: 20px;
+        top: 27px;
+    }
+
+    .registerJoinLogo {
+        width: 50px;
+        left: 20px;
+        top: 20px;
+    }
+
+    .registerH1 {
+        font-size: 30px;
+        margin: 4px;
+    }
+
+    .logInInputBorder {
+        width: 150px;
+    }
+
+    .formLogIn {
+        padding: 20px;
+    }
+
+    .logInH1 {
+        font-size: 50px;
+    }
+
+    div:has(>.overDivGuestLogInBtn) {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .overDivGuestLogInBtn {
+        margin: 0;
+    }
+}

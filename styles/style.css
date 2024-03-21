@@ -1,0 +1,184 @@
+::selection {
+    background-color: #2a3647;
+    color: white; 
+}
+
+body {
+    font-family: "inter", sans-serif;
+    margin: 0;
+}
+
+.opacity0 {
+    opacity: 0;
+}
+
+.cursorPointer {
+    cursor: pointer;
+}
+
+.posAbsolute {
+    position: absolute;
+}
+
+.posRelative {
+    position: relative;
+}
+
+.overflowHidden {
+    overflow: hidden;
+}
+
+.pointerEventsNone {
+    pointer-events: none;
+}
+
+/* ---------- DISPLAY ---------- */
+
+.d-none {
+    display: none !important;
+}
+
+.dFlex {
+    display: flex;
+}
+
+.flex1 {
+    flex-grow: 1;
+}
+
+.directionColumn {
+    flex-direction: column;
+}
+
+.directionRow {
+    flex-direction: row;
+}
+
+.alignStart {
+    align-items: start;
+}
+
+.alignCenter {
+    align-items: center;
+}
+
+.alignEnd {
+    align-items: end;
+}
+
+.justCenter {
+    justify-content: center;
+}
+
+.justBetween {
+    justify-content: space-between;
+}
+
+.justEnd {
+    justify-content: end;
+}
+
+/* ---------- FONTS ---------- */
+
+.fontRed {
+    color: rgba(255, 0, 0, 0.6);
+}
+
+.fontGrey {
+    color: #A8A8A8;
+}
+
+.fontLightGrey {
+    color: #CDCDCD;
+}
+
+.fontDarkBlue {
+    color: #2A3647;
+}
+
+.fontLightBlue {
+    color: #29ABE2;
+}
+
+.hoverFontLightBlue:hover {
+    color: #29ABE2;
+}   
+
+.fontBold {
+    font-weight: bold;
+}
+
+.hoverFontBold:hover {
+    font-weight: bold;
+}
+
+.noDecoration {
+    text-decoration: none;
+}
+
+textarea {
+    resize: none;
+}
+
+.zIndex101 {
+    z-index: 101;
+}
+
+/* ---------- BUTTONS ---------- */
+
+.darkBtn {
+    background-color: #2A3647;
+    color: white;
+    padding: 12px 15px 12px 15px;
+    border: none;
+    border-radius: 7px;
+    transition: all 125ms ease-in-out;
+}
+
+.darkBtn:hover {
+    background-color: #29ABE2;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.darkBtnWithoutHover {
+    background-color: #2A3647;
+    color: white;
+    padding: 12px 15px 12px 15px;
+    border: none;
+    border-radius: 7px;
+}
+
+.transparentBtn {
+    padding: 12px 15px 12px 15px;
+    border: 1px solid #2A3647;
+    border-radius: 7px;
+    transition: all 125ms ease-in-out;
+}
+
+.transparentBtn:hover {
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border: 2px solid #29ABE2;
+    color: #29ABE2;
+}
+
+/* ---------- SCROLLBAR ---------- */
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #dedede; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #d3d3d3; 
+}

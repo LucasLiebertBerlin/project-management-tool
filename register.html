@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="/styles/storage.css">
+    <script src="./js/storageToken.js" defer></script>
+    <script src="./js/storage.js" defer></script>
+    <script src="./js/register/initRegister.js" defer></script>
+    <script src="./js/register/registration.js" defer></script>
+    <script src="./js/register/designRegister.js" defer></script>
+    <script src="./js/index.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="/img/join_logo.png">
+</head>
+<body onload="initRegister()">
+    <div class="savingError d-none"><div class="savingError1">Sorry for saving error! <button onclick="closeSavingError()" class="savingErrorButton">OK</button></div></div>
+    <div class="loadingError d-none"><div class="loadingError1">Sorry for loading error! <button onclick="closeLoadingError()" class="loadingErrorButton">OK</button></div></div>
+    <div id="registerSignUpSuccessfully" class="fontSize16 registerSignUpSuccessfully d-none">
+        <span class="darkBtnWithoutHover bottomSlideInAndOut">You Signed Up successfully!</span>
+    </div>
+    <img class="posAbsolute registerJoinLogo" src="./img/joinLogoBig.png" alt="Join-Logo">
+    <div class="overDivFormLogIn">
+        <form onsubmit="register(event)" class="formLogIn dFlex directionColumn alignCenter posRelative">
+            <div onclick="redirectToLogIn()" class="parentRegisterArrowBack cursorPointer">
+                <img src="./img/registerArrowBack.png" class="registerArrowBack cursorPointer">
+            </div>
+            <h1 class="registerH1">Sign up</h1>
+            <div class="blueLine"></div>
+            <div class="marBot20 posRelative">
+                <input required id="registerName" class="cursorPointer logInInputBorder fontSize16" placeholder="Name" minlength="3" type="text">
+                <img onclick="focusOn('registerName')" class="posAbsolute logInInputPicture height15 right15 top11 cursorPointer" src="./img/registerPerson.png" alt="profile-img">
+            </div>
+            <div class="marBot20 posRelative">
+                <input required id="registerEmail" class="cursorPointer logInInputBorder fontSize16" placeholder="Email" minlength="4" type="email">
+                <img onclick="focusOn('registerEmail')" class="posAbsolute logInInputPicture height13 right15 top11 cursorPointer" src="./img/logInMail.png" alt="email-img">
+            </div>
+            <div class="marBot20 posRelative">
+                <input required id="registerFirstPassword" oninput="showEyeOrLock('registerFirstPassword', 'registerFirstLock', 'registerFirstVisibilityOnOrOff')" class="cursorPointer logInInputBorder fontSize16" placeholder="Password" minlength="7" type="password">
+                <img id="registerFirstLock" onclick="focusOn('registerFirstPassword')" class="posAbsolute logInInputPicture height18 right15 top9 cursorPointer" src="./img/logInLock.png" alt="lock-img">
+                <img id="registerFirstVisibilityOnOrOff" onclick="visibilityOnOff('registerFirstVisibilityOnOrOff', 'registerFirstLock', 'registerFirstPassword')" class="posAbsolute right15 height15 top11 d-none cursorPointer" src="./img/logInVisibilityOff.png" alt="visibility-off-picture">
+            </div>
+            <div class="marBot20 posRelative">
+                <input required id="registerSecondPassword" oninput="showEyeOrLock('registerSecondPassword', 'registerSecondLock', 'registerSecondVisibilityOnOrOff'), removeRedBorder('registerSecondPassword'), removeDiv('informNotTheSamePassword')" class="cursorPointer logInInputBorder fontSize16" placeholder="Confirm Password" minlength="7" type="password">
+                <img id="registerSecondLock" onclick="focusOn('registerSecondPassword')" class="posAbsolute logInInputPicture height18 right15 top9 cursorPointer" src="./img/logInLock.png" alt="lock-img">
+                <img id="registerSecondVisibilityOnOrOff" onclick="visibilityOnOff('registerSecondVisibilityOnOrOff', 'registerSecondLock', 'registerSecondPassword')" class="posAbsolute right15 height15 top11 d-none cursorPointer" src="./img/logInVisibilityOff.png" alt="visibility-off-picture">
+                <div id="informNotTheSamePassword" class="fontRed fontSize11 posAbsolute bottomMinus18 d-none">Ups! your password don't match</div>
+            </div>
+            <div class="dFlex alignCenter marBot20 marTop10 posRelative">
+                <input onclick="changeCheckbox('registerCheckbox')" required id="registerRealCheckbox" name="checkbox" type="checkbox" class="posAbsolute opacity0">
+                <img onclick="changeCheckbox('registerCheckbox')" id="registerCheckbox" class="registerCheckbox cursorPointer" src="./img/checkboxNotChecked.png" alt="checkbox">
+                <span id="registerSpanAccept" class="fontSize14 padLeft8 fontLightGrey">I accept the</span>   
+                <a class="noDecoration fontSize14 fontLightBlue hoverBlueUnderline padLeft8" href="./privacyPolicy.html">Privacy Policy</a>
+            </div>
+            <button class="darkBtn cursorPointer fontSize16 fontBold">Sign up</button>
+        </form>
+    </div>
+    <section class="posAbsolute bot60LeftCenter opacity0to1">
+        <a class="fontSize14 noDecoration fontLightGrey hoverFontLightBlue hoverFontBold padRight30" href="./privacyPolicy.html">Privacy Policy</a>
+        <a class="fontSize14 noDecoration fontLightGrey hoverFontLightBlue hoverFontBold" href="./legalNotice.html">Legal notice</a>
+    </section>
+</body>
+</html>
